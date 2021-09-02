@@ -231,13 +231,34 @@
 
              document.querySelector( "._BOX_1" ).innerHTML = "fetching..ip";
 
-             let _data = await ( await fetch( _url ) ).json();
+             let _data = await ( await fetch( _url ).catch( _on_error ) ).json();
              console.log( JSON.stringify( _data, null, 2 ) );
 
 
 
              let _ip = _data.query;
              document.querySelector( "._BOX_1" ).innerHTML = _ip;
+       }
+
+
+
+
+       function _on_error( err )
+       {
+             console.log( "_on_error" );
+
+
+             let _data = {
+                   query: "cant_fetch....."
+             };
+
+
+
+             let _resp = new Response( JSON.stringify( _data ) );
+
+             return _resp;
+
+
        }
 
 
