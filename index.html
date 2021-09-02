@@ -224,52 +224,6 @@
 
 
 
-       <script type="text/javascript">
-       function _B( str )
-       {
-             document.querySelector( "._BOX_1" ).innerHTML = str;
-       }
-
-
-       let _url = "https://api.ipify.org/?format=json";
-       _url = "https://an-alch3mist.github.io/doc_0_1/_file_.json";
-
-       function _C()
-       {
-
-
-             fetch( _url )
-                   .then(
-                         function( res )
-                         {
-                               return res.json();
-
-                         }
-                   )
-                   .then(
-                         function( data )
-                         {
-                               _B(
-                                     "ip // " + data
-                               );
-
-                         }
-                   )
-                   .catch(
-                         function( err )
-                         {
-                               console.log( "_error : " + err );
-                         }
-                   );
-
-
-
-       }
-       _C();
-
-       </script>
-
-
 
 
 
