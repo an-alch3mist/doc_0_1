@@ -218,13 +218,38 @@
 
        _A();
 
+
+
+
+
+       async function _f()
+       {
+             let _url = "https://api.ipify.org/?format=json";
+             _url = "http://ip-api.com/json";
+
+
+
+             document.querySelector( "._BOX_1" ).innerHTML = "fetching..ip";
+
+             let _data = await ( await fetch( _url ) ).json();
+             console.log( JSON.stringify( _data, null, 2 ) );
+
+
+
+             let _ip = _data.query;
+             document.querySelector( "._BOX_1" ).innerHTML = _ip;
+       }
+
+
+       function _C()
+       {
+             _f();
+
+
+       }
+       _C();
+
        </script>
-
-
-
-
-
-
 
 
 
