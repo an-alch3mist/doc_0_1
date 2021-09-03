@@ -4,8 +4,8 @@
 <head>
        <meta charset="utf-8">
        </meta>
-       <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
-       </meta>
+       <!--meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+       </meta-->
 
        <title>
               Document
@@ -341,7 +341,7 @@
              console.log( JSON.stringify( _data, null, 2 ) );
 
              let _ip = _data; //.query;
-             _BOX_1.innerHTML = _ip;
+             _BOX_1.innerHTML = _ip.ip;
        }
 
 
