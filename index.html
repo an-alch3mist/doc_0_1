@@ -4,10 +4,6 @@
 <head>
        <meta charset="utf-8">
        </meta>
-       <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
-       
-       
-       
        <title>
               Document
        </title>
@@ -306,7 +302,7 @@
              //
              fetch( _url ).then(  function( _resp ) {  return _resp.json();  }  )
                           .then(  function( _data ) {  after_fetch(_data);   }  )
-                          .catch( function( _erro ) {  cant_fetch();         }  )
+                          .catch( function( _erro ) {  cant_fetch(_erro);         }  )
 
              /* beautify preserve:end */
 
@@ -345,8 +341,10 @@
 
 
        /* cant_fetch */
-       function cant_fetch()
+       function cant_fetch( _erro )
        {
+             console.log( _erro );
+
              _BOX_1.innerHTML = "cant_fetch...";
        }
 
