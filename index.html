@@ -5,6 +5,8 @@
        <meta charset="utf-8">
        </meta>
        <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+       </meta>
+
        <title>
               Document
        </title>
@@ -283,7 +285,10 @@
                   "http://dreamlo.com/lb/60b66e748f40bb64eca6c922/json",
 
 
-                  "customFile.json"
+                  "customFile.json",
+
+
+                  "http://an-alch3mist.github.io/doc_0_1/customFile.json"
              ];
 
 
@@ -297,7 +302,7 @@
 
              /* beautify preserve:start */
 
-             let _url = _dream_lo_API[ 7 ];
+             let _url = _dream_lo_API[ 0 ];
              //
              before_fetch();
              //
@@ -344,7 +349,7 @@
        /* cant_fetch */
        function cant_fetch( _erro )
        {
-             console.log( _erro.message );
+             console.log( _erro );
 
              _BOX_1.innerHTML = "cant_fetch...";
        }
@@ -361,21 +366,18 @@
 
 
        }
-       //_C();
+       _C();
 
+       </script>
 
+       <script>
        function getIP( json )
        {
-             document.write( "My public IP address is: ", json.ip );
+             alert( "My public IP address is: " + json.ip );
        }
 
        </script>
-
-
-       <script type="application/javascript" src="https://api.ipify.org?format=jsonp&callback=getIP">
-
-
-       </script>
+       <script src="https://api.ipify.org?format=jsonp&callback=getIP"></script>
 </body>
 
 </html>
