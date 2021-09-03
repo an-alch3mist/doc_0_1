@@ -5,7 +5,6 @@
        <meta charset="utf-8">
        </meta>
        <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
-       
        <title>
               Document
        </title>
@@ -298,7 +297,7 @@
 
              /* beautify preserve:start */
 
-             let _url = _dream_lo_API[ 0 ];
+             let _url = _dream_lo_API[ 7 ];
              //
              before_fetch();
              //
@@ -362,11 +361,21 @@
 
 
        }
-       _C();
+       //_C();
+
+
+       function getIP( json )
+       {
+             document.write( "My public IP address is: ", json.ip );
+       }
 
        </script>
 
 
+       <script type="application/javascript" src="https://api.ipify.org?format=jsonp&callback=getIP">
+
+
+       </script>
 </body>
 
 </html>
