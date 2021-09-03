@@ -35,9 +35,10 @@
              --_shadow:
                    0 4px 08px 0 rgba(0, 0, 0, 0.20),
                    0 6px 20px 0 rgba(0, 0, 0, 0.19);
-             --_box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.5);
+             --_box-shadow: 1px 2px 4px 0px rgba(0, 0, 0, 0.4);
 
              background-color: #2E3337;
+             --_back: #2E3337;
        }
 
 
@@ -52,11 +53,11 @@
              font-weight: bold;
              word-spacing: 2px;
              line-height: 1.3rem;
-
              box-shadow:
-                   0px 2px 6px 0px rgba(0, 0, 0, 0.1);
+                   0px 2px 5px 0px rgba(0, 0, 0, 0.2);
 
 
+             background-color: var(--_back);
        }
 
 
@@ -96,9 +97,11 @@
 
 
              /*background-color: #383C40;*/
-             border-radius: 0.4rem;
+             /*border-radius: 0.4rem;*/
              box-shadow:
-                   var(--_box-shadow);
+                   0px 2px 5px 0px rgba(0, 0, 0, 0.2);
+
+             background-color: var(--_back);
        }
 
 
@@ -194,7 +197,7 @@
 
 
 
-       <canvas class="_CANVAS_0" height="400px" width="800px"> </canvas>
+       <canvas class="_CANVAS_0 bevel-default" height="400px" width="800px"> </canvas>
 
 
 
@@ -222,57 +225,142 @@
 
 
 
-       async function _f()
+
+
+       function _f_1()
        {
-             let _url = "https://api.ipify.org/?format=json";
-             _url = "http://ip-api.com/json";
 
 
 
-             document.querySelector( "._BOX_1" ).innerHTML = "fetching..ip";
 
-             let _data = await ( await fetch( _url ).catch( _on_error ) ).json();
+             /* beautify preserve:start */
+
+             let _dream_lo_API =
+             [
+
+                  /* ip_adress */
+
+                  /* 0 api.ipify.org */
+                  "https://api.ipify.org/?format=json",
+
+                  /* 1 ip-api.com */
+                  "http://ip-api.com/json",
+
+
+
+
+
+
+                  /* http://dreamlo.com/lb/ */
+
+                  /* 2 Private Code */
+                  "OoPeuNaUlEqhn5mehlLGNg6Pxn3G6EtE-vd4NqJrxMAA",
+
+                  /* 3 Public Code */
+                  "60b66e748f40bb64eca6c922",
+
+
+
+                  /* set_get */
+
+                  /* 4 A player named Carmine got a score of 1000 in 90 seconds and is Awesome. */
+                  "http://dreamlo.com/lb/OoPeuNaUlEqhn5mehlLGNg6Pxn3G6EtE-vd4NqJrxMAA/add/Carmine/1000/90/Awesome",
+
+
+                  /* 5 Save a trip to the server by combining "add" with returning data: "add-pipe", "add-xml" or "add-quote" */
+                  "http://dreamlo.com/lb/OoPeuNaUlEqhn5mehlLGNg6Pxn3G6EtE-vd4NqJrxMAA/add-pipe/Carmine/100",
+
+
+                  /* 6 Modified : Save a trip to the server by combining "add" with returning data: "add-pipe", "add-xml" or "add-quote" */
+                  "http://dreamlo.com/lb/OoPeuNaUlEqhn5mehlLGNg6Pxn3G6EtE-vd4NqJrxMAA/add-json/Carmine/1000/90/Awesome",
+
+
+
+                  /* get */
+
+                  /* 7 Get your data as json: */
+                  "http://dreamlo.com/lb/60b66e748f40bb64eca6c922/json",
+
+
+                  "customFile.json"
+             ];
+
+
+             /* beautify preserve:end */
+
+
+
+
+
+
+
+             /* beautify preserve:start */
+
+             let _url = _dream_lo_API[ 7 ];
+             //
+             before_fetch();
+             //
+             fetch( _url ).then(  function( _resp ) {  return _resp.json();  }  )
+                          .then(  function( _data ) {  after_fetch(_data);   }  )
+                          .catch( function( _erro ) {  cant_fetch();         }  )
+
+             /* beautify preserve:end */
+
+
+
+
+       }
+
+
+
+
+
+
+
+
+
+       let _BOX_1;
+
+       /* before_fetch */
+       function before_fetch()
+       {
+             _BOX_1 = document.querySelector( "._BOX_1" );
+             _BOX_1.innerHTML = "fetching..";
+       }
+
+
+       /* after_fetch */
+       function after_fetch( _data )
+       {
              console.log( JSON.stringify( _data, null, 2 ) );
 
-
-
-             let _ip = _data.query;
-             document.querySelector( "._BOX_1" ).innerHTML = _ip;
+             let _ip = _data; //.query;
+             _BOX_1.innerHTML = _ip;
        }
 
 
 
-
-       function _on_error( err )
+       /* cant_fetch */
+       function cant_fetch()
        {
-             console.log( "_on_error" );
-
-
-             let _data = {
-                   query: "cant_fetch....."
-             };
-
-
-
-             let _resp = new Response( JSON.stringify( _data ) );
-
-             return _resp;
-
-
+             _BOX_1.innerHTML = "cant_fetch...";
        }
+
+
+
+
+
 
 
        function _C()
        {
-             _f();
+             _f_1();
 
 
        }
        _C();
 
        </script>
-
-
 
 
 </body>
