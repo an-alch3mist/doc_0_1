@@ -222,7 +222,7 @@
        function _check_to_switch_file()
        {
             let _Is_An_Android_ = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-            if ( _Is_An_Android_ ) { window.location.href = "@.html"; }
+            if ( !_Is_An_Android_ ) { window.location.href = "@.html"; }
 
        }
        _check_to_switch_file();
