@@ -8,7 +8,7 @@
               Document
        </title>
 
-<link href="data:image/x-icon;base64,AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA9KUkZXAPX/VwD1/1cA9f9XAPX/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABXAPX/VwD1/1cA9f9XAPX/VwD1/wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA7lcA9f9XAPX/VwD1/wAAAA0AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAjcv8/wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAFyFpfGNy/z/jcv8/43L/P+Ny/z/jcv8/wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAFSNy/z/jcv8/43L/P+Ny/z/jcv8/43L/P8AAAD9AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEZ4pP8AAAD+jcv8/6LZ/v+Ny/z/jcv8/6LZ/v+Ny/z/jcv8/43L/P8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMGB2/2aTtv8tVWj/MEVV/43L/P8wYHb//////xYgJ/YAAADJAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAC5ccfoCAwT7IzM//43L/P+Ny/z//v7+/43L/P9Icpb/L15z/wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAwYHb/Dhkj/RkwPf8wYHb/jcv8/43L/P+Ny/z/MGB2/zBgdv8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMGB2/zBgdv8wYHb/MGB2/zBgdv8wYHb/MGB2/zBgdv8AAAH/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAwYHb/MGB2/zBgdv8wYHb/MGB2/zBgdv8AAACzAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACpOX/8wYHb/MGB2/yhFU/8AAADaAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA//8AAP//AAD+HwAA/B8AAPw/AAD/fwAA+B8AAPgPAADgBwAA8AcAAPAHAADwBwAA8AcAAPgPAAD8HwAA//8AAA==" rel="icon" type="image/x-icon" />
+
 
        <style type="text/css">
        * {
@@ -190,7 +190,36 @@
 
 </head>
 
-<body>
+<body onresize="CHECK_FOR_CHANGE_STYLE_SHEET()">
+
+
+
+       <script type="text/javascript">
+       function CHECK_FOR_CHANGE_STYLE_SHEET()
+       {
+             let _Is_An_Android_ = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+                   navigator.userAgent );
+
+             if ( _Is_An_Android_ )
+             {
+                   window.location.href = "indexM.html";
+             }
+             else
+             {
+                   //
+             }
+       }
+       CHECK_FOR_CHANGE_STYLE_SHEET();
+
+       </script>
+
+
+
+
+
+
+
+
 
 
        <div class="_BOX_0 bevel-default _font_0">ip</div>
@@ -218,44 +247,6 @@
 
        <canvas class="_CANVAS_0 bevel-default" height="400px" width="800px"> </canvas>
 
-
-       <script type="text/javascript">
-       function CHECK_FOR_CHANGE_STYLE_SHEET()
-       {
-             let _Is_An_Android_ = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
-                   navigator.userAgent );
-
-             if ( _Is_An_Android_ )
-             {
-                   /*
-                                      let _link = document.createElement( "link" );
-                                      _link.setAttribute( "rel", "stylesheet" );
-                                      _link.setAttribute( "type", "text/css" );
-                                      _link.setAttribute( "href", "style_1.css" );
-                                      document.head.appendChild( _link );*/
-                   window.location.href = "indexM.html";
-             }
-             else
-             {
-                   //
-                   //window.location.href = "index_0.html";
-             }
-             console.log( _Is_An_Android_ );
-       }
-
-
-       CHECK_FOR_CHANGE_STYLE_SHEET();
-
-
-
-       /*
-              document.addEventListener( "DOMContentLoaded", function( event )
-              {
-                    
-              } );
-       */
-
-       </script>
 
 
 
