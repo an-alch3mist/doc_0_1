@@ -34,6 +34,7 @@
              --_box-shadow: 1px 2px 4px 0px rgba(0, 0, 0, 0.4);
              --_back: #2E3337;
 
+             --_pad: 1.7rem;
              background-color: #2E3337;
        }
 
@@ -86,13 +87,13 @@
 
        ._BOX_0 {
 
-             width: calc(100vw - 2rem - 4rem);
+             width: calc(100vw - 2rem - 2 * var(--_pad));
              max-width: 74rem;
              height: auto;
 
 
              margin: 2rem auto;
-             padding: 1.4rem;
+             padding: var(--_pad);
 
 
              background-color: var(--_back);
@@ -102,11 +103,11 @@
 
        ._BOX_1 {
 
-             width: calc(100vw - 2rem - 4rem);
+             width: calc(100vw - 2rem - 2 * var(--_pad));
              max-width: 74rem;
              height: auto;
 
-             padding: 1.4rem;
+             padding: var(--_pad);
              margin: 2rem auto;
 
              background-color: var(--_back);
@@ -116,12 +117,12 @@
 
 
        ._BOX_2 {
-             width: calc(100vw - 2rem - 4rem);
+             width: calc(100vw - 2rem - 2 * var(--_pad));
              max-width: 74rem;
              height: auto;
 
              margin: 2rem auto;
-             padding: 1.4rem;
+             padding: var(--_pad);
 
 
              background-color: var(--_back);
