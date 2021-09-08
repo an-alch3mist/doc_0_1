@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+       <meta charset="UTF-8">
+       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+       <title>Document</title>
+
+
+
+       <style type="text/css">
+       * {
+             margin: 0px;
+             padding: 0px;
+       }
+
+       body {
+             background-color: #303033;
+
+             -webkit-text-size-adjust: 220%;
+             -moz-text-size-adjust: 220%;
+       }
+
+
+       ._font_0 {
+             font-size: 0.85rem;
+             line-height: 1.3rem;
+             font-weight: bold;
+             font-style: italic;
+             font-family: monospace;
+       }
+
+       ._BOX_0 {
+
+             padding: 1rem;
+             width: calc(100vw - 4rem - 2rem);
+             max-width: 60rem;
+
+             margin: 2rem auto;
+             color: #eee;
+
+       }
+
+
+
+
+       ._CANVAS_0 {
+             display: block;
+             width: calc(100vw - 4rem);
+             max-width: 62rem;
+             margin: 2rem auto;
+
+
+       }
+
+       ._CANVAS_1 {
+             display: block;
+             width: 50%;
+
+       }
+
+       ._CANVAS_2 {
+             display: block;
+             width: 50%;
+
+
+       }
+
+
+       ._BOX_1 {
+             width: calc(100vw - 4rem - 6px);
+             max-width: 62rem;
+
+             margin: 2rem auto;
+
+             display: flex;
+             justify-content: center;
+       }
+
+
+
+       .bevel-default {
+
+
+             --_border_size: 3px;
+
+             border-top: var(--_border_size) solid #4e4e5e;
+             border-right: var(--_border_size) solid #17171c;
+             border-bottom: var(--_border_size) solid #0f0f1f;
+             border-left: var(--_border_size) solid #3d3d4d;
+             /*border-radius: 3px;*/
+
+             box-shadow:
+                   2px 3px 4px 0px rgba(0, 0, 0, 0.3);
+       }
+
+
+
+
+
+
+
+       /* width */
+       ::-webkit-scrollbar {
+             width: 6px;
+       }
+
+       /* Track */
+       ::-webkit-scrollbar-track {
+             background-color: #333;
+       }
+
+       /* Handle */
+       ::-webkit-scrollbar-thumb {
+             background-color: #bbb;
+             border-radius: 4px;
+             box-shadow: 0px 2px 0px 0px #666;
+       }
+
+       /* Handle on hover */
+       ::-webkit-scrollbar-thumb:hover {
+             background-color: #ccc;
+       }
+
+       </style>
+</head>
+
+<body>
+
+       <div class="_BOX_0 _font_0 bevel-default">
+              <br>
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Asperiores adrepudiandae,
+              quaerat facere esse, fugit quia mollitia perferendis? Eius pariatur dicta dolorem,
+              similique qui quae nihil dolores repellat est nulla.
+       </div>
+
+
+       <canvas class="_CANVAS_0 bevel-default" width="1000px" height="450px"></canvas>
+
+
+       <div class="_BOX_0 _font_0 bevel-default">
+              Lorem ipsum dolor sit amet consectetur adipisicing, elit. Quidem, at.
+       </div>
+
+
+
+       <div class="_BOX_1">
+              <canvas class="_CANVAS_1 bevel-default" width="500px" height="350px"></canvas>
+              <canvas class="_CANVAS_2 bevel-default" width="500px" height="350px"></canvas>
+       </div>
+
+
+
+       <script type="text/javascript">
+       function preventDefault_for_canvas_mouse_down()
+       {
+
+             var canvasEls = document.getElementsByTagName( 'canvas' ),
+                   preventHl = function()
+                   {
+                         return false;
+                   },
+                   i = 0;
+
+             while ( i < canvasEls.length )
+             {
+                   canvasEls[ i ].onmousedown = preventHl;
+                   i += 1;
+             }
+       }
+       preventDefault_for_canvas_mouse_down();
+
+
+
+       function _A()
+       {
+
+             if ( is_mouse_held_down_on_canvas_0 )
+             {
+
+                   let _CANVAS_0 = document.querySelector( "._CANVAS_0" );
+                   let _ctx_ = _CANVAS_0.getContext( "2d" );
+
+
+                   _ctx_.clearRect( 0, 0, _CANVAS_0.width, _CANVAS_0.height );
+                   _ctx_.fillStyle = "#ddd";
+                   _ctx_.fillRect( _x, _y, 150, 40 );
+
+
+
+             }
+
+
+             if ( is_mouse_held_down_on_canvas_1 )
+             {
+
+                   let _CANVAS_0 = document.querySelector( "._CANVAS_1" );
+                   let _ctx_ = _CANVAS_0.getContext( "2d" );
+
+
+                   _ctx_.clearRect( 0, 0, _CANVAS_0.width, _CANVAS_0.height );
+                   _ctx_.fillStyle = "#ddd";
+                   _ctx_.fillRect( _x, _y, 150, 40 );
+
+
+
+             }
+
+
+             if ( is_mouse_held_down_on_canvas_2 )
+             {
+
+                   let _CANVAS_0 = document.querySelector( "._CANVAS_2" );
+                   let _ctx_ = _CANVAS_0.getContext( "2d" );
+
+
+                   _ctx_.clearRect( 0, 0, _CANVAS_0.width, _CANVAS_0.height );
+                   _ctx_.fillStyle = "#ddd";
+                   _ctx_.fillRect( _x, _y, 150, 40 );
+
+
+
+             }
+
+             requestAnimationFrame( _A );
+       }
+
+
+       let _x = 0;
+       let _y = 0;
+
+       window.addEventListener( 'mousemove', checkMouseMove );
+
+       function checkMouseMove( evt )
+       {
+
+             if ( is_mouse_held_down_on_canvas_0 )
+             {
+
+                   let _canvas_0 = document.querySelector( "._CANVAS_0" );
+                   var rect = _canvas_0.getBoundingClientRect(), // abs. size of element
+                         scaleX = _canvas_0.width / rect.width, // relationship bitmap vs. element for X
+                         scaleY = _canvas_0.height / rect.height; // relationship bitmap vs. element for Y
+                   x0 = ( evt.clientX - rect.left ) * scaleX; // scale mouse coordinates after they have
+                   y0 = ( evt.clientY - rect.top ) * scaleY // been adjusted to be relative to element
+
+
+                   _x = x0;
+                   _y = y0;
+
+             }
+             else if ( is_mouse_held_down_on_canvas_1 )
+             {
+
+                   let _canvas_0 = document.querySelector( "._CANVAS_1" );
+                   var rect = _canvas_0.getBoundingClientRect(), // abs. size of element
+                         scaleX = _canvas_0.width / rect.width, // relationship bitmap vs. element for X
+                         scaleY = _canvas_0.height / rect.height; // relationship bitmap vs. element for Y
+                   x0 = ( evt.clientX - rect.left ) * scaleX; // scale mouse coordinates after they have
+                   y0 = ( evt.clientY - rect.top ) * scaleY // been adjusted to be relative to element
+
+
+                   _x = x0;
+                   _y = y0;
+
+             }
+             else if ( is_mouse_held_down_on_canvas_2 )
+             {
+
+                   let _canvas_0 = document.querySelector( "._CANVAS_2" );
+                   var rect = _canvas_0.getBoundingClientRect(), // abs. size of element
+                         scaleX = _canvas_0.width / rect.width, // relationship bitmap vs. element for X
+                         scaleY = _canvas_0.height / rect.height; // relationship bitmap vs. element for Y
+                   x0 = ( evt.clientX - rect.left ) * scaleX; // scale mouse coordinates after they have
+                   y0 = ( evt.clientY - rect.top ) * scaleY // been adjusted to be relative to element
+
+
+                   _x = x0;
+                   _y = y0;
+
+             }
+
+       }
+
+
+       document.querySelector( "._CANVAS_0" ).addEventListener( "mousedown", check_mouse_down_0 );
+       document.querySelector( "._CANVAS_1" ).addEventListener( "mousedown", check_mouse_down_1 );
+       document.querySelector( "._CANVAS_2" ).addEventListener( "mousedown", check_mouse_down_2 );
+
+
+       window.addEventListener( "mouseup", check_mouse_up );
+
+       // function check_mouse_move( e )
+       // {
+       // let _CANVAS_0 = document.querySelector( "._CANVAS_0" );
+       // let _rect = _CANVAS_0.getBoundingClientRect();
+       // // console.log( _rect );
+
+
+       // let _nx = e.offsetX;
+       // let _ny = e.offsetY;
+       // let _tx = _nx / _rect.width;
+       // let _ty = _ny / _rect.height;
+
+       // let _X = _tx * _CANVAS_0.width;
+       // let _Y = _ty * _CANVAS_0.heigth;
+
+       // _x = _X;
+       // _y = _Y;
+
+       // // console.log( e.offsetX + " // " + e.offsetY );
+       // }
+
+
+       let is_mouse_held_down_on_canvas_0 = false;
+       let is_mouse_held_down_on_canvas_1 = false;
+       let is_mouse_held_down_on_canvas_2 = false;
+
+
+       function check_mouse_down_0( evt )
+       {
+             let _canvas_0 = document.querySelector( "._CANVAS_0" );
+             var rect = _canvas_0.getBoundingClientRect(), // abs. size of element
+                   scaleX = _canvas_0.width / rect.width, // relationship bitmap vs. element for X
+                   scaleY = _canvas_0.height / rect.height; // relationship bitmap vs. element for Y
+             x0 = ( evt.clientX - rect.left ) * scaleX; // scale mouse coordinates after they have
+             y0 = ( evt.clientY - rect.top ) * scaleY // been adjusted to be relative to element
+
+
+             _x = x0;
+             _y = y0;
+             is_mouse_held_down_on_canvas_0 = true;
+       }
+
+       function check_mouse_down_1( evt )
+       {
+             let _canvas_0 = document.querySelector( "._CANVAS_1" );
+             var rect = _canvas_0.getBoundingClientRect(), // abs. size of element
+                   scaleX = _canvas_0.width / rect.width, // relationship bitmap vs. element for X
+                   scaleY = _canvas_0.height / rect.height; // relationship bitmap vs. element for Y
+             x0 = ( evt.clientX - rect.left ) * scaleX; // scale mouse coordinates after they have
+             y0 = ( evt.clientY - rect.top ) * scaleY // been adjusted to be relative to element
+
+
+             _x = x0;
+             _y = y0;
+             is_mouse_held_down_on_canvas_1 = true;
+       }
+
+       function check_mouse_down_2( evt )
+       {
+             let _canvas_0 = document.querySelector( "._CANVAS_2" );
+             var rect = _canvas_0.getBoundingClientRect(), // abs. size of element
+                   scaleX = _canvas_0.width / rect.width, // relationship bitmap vs. element for X
+                   scaleY = _canvas_0.height / rect.height; // relationship bitmap vs. element for Y
+             x0 = ( evt.clientX - rect.left ) * scaleX; // scale mouse coordinates after they have
+             y0 = ( evt.clientY - rect.top ) * scaleY // been adjusted to be relative to element
+
+
+             _x = x0;
+             _y = y0;
+             is_mouse_held_down_on_canvas_2 = true;
+       }
+
+
+
+
+
+       function check_mouse_up( e )
+       {
+             is_mouse_held_down_on_canvas_0 = false;
+             is_mouse_held_down_on_canvas_1 = false;
+             is_mouse_held_down_on_canvas_2 = false;
+       }
+
+       _A();
+
+       </script>
+
+
+</body>
+
+</html>
