@@ -69,7 +69,7 @@
 
        ._BOX_1 {
              width: calc(100vw - 4rem - 6px);
-             max-width: 62rem;
+             max-width: calc(62rem - 6px);
 
              margin: 2rem auto;
 
@@ -238,11 +238,11 @@
              {
 
                    let _canvas_0 = document.querySelector( "._CANVAS_0" );
-                   var rect = _canvas_0.getBoundingClientRect(), // abs. size of element
-                         scaleX = _canvas_0.width / rect.width, // relationship bitmap vs. element for X
-                         scaleY = _canvas_0.height / rect.height; // relationship bitmap vs. element for Y
-                   x0 = ( evt.clientX - rect.left ) * scaleX; // scale mouse coordinates after they have
-                   y0 = ( evt.clientY - rect.top ) * scaleY // been adjusted to be relative to element
+                   var rect = _canvas_0.getBoundingClientRect(),
+                         scaleX = _canvas_0.width / rect.width,
+                         scaleY = _canvas_0.height / rect.height;
+                   x0 = ( evt.clientX - rect.left ) * scaleX;
+                   y0 = ( evt.clientY - rect.top ) * scaleY;
 
 
                    _x = x0;
@@ -253,11 +253,11 @@
              {
 
                    let _canvas_0 = document.querySelector( "._CANVAS_1" );
-                   var rect = _canvas_0.getBoundingClientRect(), // abs. size of element
-                         scaleX = _canvas_0.width / rect.width, // relationship bitmap vs. element for X
-                         scaleY = _canvas_0.height / rect.height; // relationship bitmap vs. element for Y
-                   x0 = ( evt.clientX - rect.left ) * scaleX; // scale mouse coordinates after they have
-                   y0 = ( evt.clientY - rect.top ) * scaleY // been adjusted to be relative to element
+                   var rect = _canvas_0.getBoundingClientRect(),
+                         scaleX = _canvas_0.width / rect.width,
+                         scaleY = _canvas_0.height / rect.height;
+                   x0 = ( evt.clientX - rect.left ) * scaleX;
+                   y0 = ( evt.clientY - rect.top ) * scaleY;
 
 
                    _x = x0;
@@ -268,11 +268,11 @@
              {
 
                    let _canvas_0 = document.querySelector( "._CANVAS_2" );
-                   var rect = _canvas_0.getBoundingClientRect(), // abs. size of element
-                         scaleX = _canvas_0.width / rect.width, // relationship bitmap vs. element for X
-                         scaleY = _canvas_0.height / rect.height; // relationship bitmap vs. element for Y
-                   x0 = ( evt.clientX - rect.left ) * scaleX; // scale mouse coordinates after they have
-                   y0 = ( evt.clientY - rect.top ) * scaleY // been adjusted to be relative to element
+                   var rect = _canvas_0.getBoundingClientRect(),
+                         scaleX = _canvas_0.width / rect.width,
+                         scaleY = _canvas_0.height / rect.height;
+                   x0 = ( evt.clientX - rect.left ) * scaleX;
+                   y0 = ( evt.clientY - rect.top ) * scaleY;
 
 
                    _x = x0;
@@ -289,28 +289,26 @@
 
 
        window.addEventListener( "mouseup", check_mouse_up );
+       /*
+              function check_mouse_move( e )
+              {
+                    let _CANVAS_0 = document.querySelector( "._CANVAS_0" );
+                    let _rect = _CANVAS_0.getBoundingClientRect();
 
-       // function check_mouse_move( e )
-       // {
-       // let _CANVAS_0 = document.querySelector( "._CANVAS_0" );
-       // let _rect = _CANVAS_0.getBoundingClientRect();
-       // // console.log( _rect );
 
+                    let _nx = e.offsetX;
+                    let _ny = e.offsetY;
+                    let _tx = _nx / _rect.width;
+                    let _ty = _ny / _rect.height;
 
-       // let _nx = e.offsetX;
-       // let _ny = e.offsetY;
-       // let _tx = _nx / _rect.width;
-       // let _ty = _ny / _rect.height;
+                    let _X = _tx * _CANVAS_0.width;
+                    let _Y = _ty * _CANVAS_0.heigth;
 
-       // let _X = _tx * _CANVAS_0.width;
-       // let _Y = _ty * _CANVAS_0.heigth;
+                    _x = _X;
+                    _y = _Y;
 
-       // _x = _X;
-       // _y = _Y;
-
-       // // console.log( e.offsetX + " // " + e.offsetY );
-       // }
-
+              }
+       */
 
        let is_mouse_held_down_on_canvas_0 = false;
        let is_mouse_held_down_on_canvas_1 = false;
@@ -320,11 +318,11 @@
        function check_mouse_down_0( evt )
        {
              let _canvas_0 = document.querySelector( "._CANVAS_0" );
-             var rect = _canvas_0.getBoundingClientRect(), // abs. size of element
-                   scaleX = _canvas_0.width / rect.width, // relationship bitmap vs. element for X
-                   scaleY = _canvas_0.height / rect.height; // relationship bitmap vs. element for Y
-             x0 = ( evt.clientX - rect.left ) * scaleX; // scale mouse coordinates after they have
-             y0 = ( evt.clientY - rect.top ) * scaleY // been adjusted to be relative to element
+             var rect = _canvas_0.getBoundingClientRect(),
+                   scaleX = _canvas_0.width / rect.width,
+                   scaleY = _canvas_0.height / rect.height;
+             x0 = ( evt.clientX - rect.left ) * scaleX;
+             y0 = ( evt.clientY - rect.top ) * scaleY;
 
 
              _x = x0;
@@ -335,11 +333,11 @@
        function check_mouse_down_1( evt )
        {
              let _canvas_0 = document.querySelector( "._CANVAS_1" );
-             var rect = _canvas_0.getBoundingClientRect(), // abs. size of element
-                   scaleX = _canvas_0.width / rect.width, // relationship bitmap vs. element for X
-                   scaleY = _canvas_0.height / rect.height; // relationship bitmap vs. element for Y
-             x0 = ( evt.clientX - rect.left ) * scaleX; // scale mouse coordinates after they have
-             y0 = ( evt.clientY - rect.top ) * scaleY // been adjusted to be relative to element
+             var rect = _canvas_0.getBoundingClientRect(),
+                   scaleX = _canvas_0.width / rect.width,
+                   scaleY = _canvas_0.height / rect.height;
+             x0 = ( evt.clientX - rect.left ) * scaleX;
+             y0 = ( evt.clientY - rect.top ) * scaleY;
 
 
              _x = x0;
@@ -350,11 +348,11 @@
        function check_mouse_down_2( evt )
        {
              let _canvas_0 = document.querySelector( "._CANVAS_2" );
-             var rect = _canvas_0.getBoundingClientRect(), // abs. size of element
-                   scaleX = _canvas_0.width / rect.width, // relationship bitmap vs. element for X
-                   scaleY = _canvas_0.height / rect.height; // relationship bitmap vs. element for Y
-             x0 = ( evt.clientX - rect.left ) * scaleX; // scale mouse coordinates after they have
-             y0 = ( evt.clientY - rect.top ) * scaleY // been adjusted to be relative to element
+             var rect = _canvas_0.getBoundingClientRect(),
+                   scaleX = _canvas_0.width / rect.width,
+                   scaleY = _canvas_0.height / rect.height;
+             x0 = ( evt.clientX - rect.left ) * scaleX;
+             y0 = ( evt.clientY - rect.top ) * scaleY;
 
 
              _x = x0;
