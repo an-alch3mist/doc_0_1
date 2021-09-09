@@ -62,7 +62,7 @@
 
 
 
-/*
+       /*
        @-moz-document url-prefix() {
 
               ._font_0 {
@@ -243,11 +243,11 @@
 
 
 
-       
-       
-       
-       
-       
+
+
+
+
+
        <div class="_BOX_0 bevel-default _font_0">ip</div>
 
 
@@ -272,22 +272,38 @@
 
 
        <canvas class="_CANVAS_0 bevel-default" height="400px" width="800px"> </canvas>
-       
-       
-       
-       
-       
-       
-       
-       
-       
-       
-       
-       
-       
-       
-       
-       
+
+
+
+       <div class="slidecontainer">
+              <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
+              <br>
+              <br>
+              <br>
+              <div style="color:#eee" id="demo"></div>
+       </div>
+
+       <br>
+       <br>
+
+
+       <script type="text/javascript">
+       var slider = document.getElementById( "myRange" );
+       var output = document.getElementById( "demo" );
+       output.innerHTML = slider.value; // Display the default slider value
+
+       // Update the current slider value (each time you drag the slider handle)
+       slider.oninput = function()
+       {
+             output.innerHTML = this.value;
+       }
+
+       </script>
+
+
+
+
+
 
 
 
