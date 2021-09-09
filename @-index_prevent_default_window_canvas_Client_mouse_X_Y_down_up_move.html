@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+       <meta charset="UTF-8">
+       <title>@-Touch</title>
+
+
+
+
+       <style type="text/css">
+       * {
+             padding: 0px;
+             margin: 0px;
+       }
+
+       body {
+
+             background-color: #303036;
+
+             -webkit-text-size-adjust: 190%;
+             -moz-text-size-adjust: 190%;
+       }
+
+       ._CANVAS_0 {
+             display: block;
+
+
+             --_border_width: 3px;
+             --_margin_width_x: 2rem;
+
+             border: var(--_border_width) solid red;
+
+
+             margin: 2rem auto;
+
+
+             width: calc(100vw - 2 * var(--_margin_width_x) - 2 * var(--_border_width));
+
+             height: auto;
+       }
+
+
+
+       ._CANVAS_1 {
+             display: block;
+
+
+             --_border_width: 3px;
+             --_margin_width_x: 2rem;
+
+             border: var(--_border_width) solid red;
+
+
+             margin: 2rem auto 0rem auto;
+
+
+             width: calc(100vw - 2 * var(--_margin_width_x) - 2 * var(--_border_width));
+
+             height: auto;
+       }
+
+       ._CANVAS_2 {
+             display: block;
+
+
+             --_border_width: 3px;
+             --_margin_width_x: 2rem;
+
+             border: var(--_border_width) solid red;
+
+
+             margin: 0rem auto 2rem auto;
+
+
+             width: calc(100vw - 2 * var(--_margin_width_x) - 2 * var(--_border_width));
+
+             height: auto;
+       }
+
+
+
+       ._BOX_0 {
+             color: #eee;
+             font-size: 0.9rem;
+             font-family: monospace;
+             font-weight: bold;
+             font-style: italic;
+
+             line-height: 2.2rem;
+
+             padding: 2rem;
+             margin: 2rem auto;
+
+             width: calc(100vw - 4rem - 4rem - 6px);
+             border: 3px solid red;
+       }
+
+       ._BOX_1 {
+             color: #eee;
+             font-size: 0.9rem;
+             font-family: monospace;
+             font-weight: bold;
+             font-style: italic;
+
+             line-height: 2.2rem;
+
+             padding: 2rem;
+             margin: 2rem auto;
+
+             width: calc(100vw - 4rem - 4rem - 6px);
+             border: 3px solid red;
+       }
+
+       </style>
+
+</head>
+
+<body>
+
+
+       <div class="_BOX_0">
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vero nam quidem officiis
+              ducimus harum minus corrupti? Laudantium ullam eum iste officia laborum corporis ut
+              impedit quisquam nisi voluptatem amet, blanditiis.
+       </div>
+
+       <canvas class="_CANVAS_0" width="500px" height="400px"></canvas>
+
+       <div class="_BOX_1">
+              Lorem ipsum dolor, sit amet consectetur, adipisicing elit. Dolorum odit, cumque. Aut,
+              molestiae tempore magnam quod ad alias enim rem rerum quibusdam pariatur temporibus
+              magni, inventore voluptate qui nam consectetur quo illo? Eveniet fugiat atque ex, odit
+              dolor omnis tenetur ipsa deserunt culpa quos quod assumenda perspiciatis incidunt
+              voluptatum facilis aperiam autem, eligendi quasi inventore illum iste. Sequi commodi
+              numquam quaerat nulla aspernatur iusto vero quia a, corporis culpa ducimus deleniti unde
+              dicta adipisci beatae accusamus laborum placeat eveniet recusandae. Aliquid sit
+              consequatur dolorem unde ducimus inventore cupiditate vel temporibus architecto
+              recusandae repellendus, iste ex reprehenderit debitis enim accusamus quam!
+       </div>
+
+
+
+       <canvas class="_CANVAS_1" width="500px" height="300px"></canvas>
+       <canvas class="_CANVAS_2" width="500px" height="300px"></canvas>
+
+
+       <br>
+       <br>
+       <br>
+       <br>
+       <br>
+       <br>
+       <br>
+       <br>
+       <br>
+       <br>
+       <br>
+       <br>
+       <br>
+       <br>
+       <br>
+       <br>
+       <br>
+       <br>
+       <br>
+       <br>
+
+       <script type="text/javascript">
+       /**/
+
+
+       function preventDefault_for_canvas_mouse_down()
+       {
+             var canvasEls = document.getElementsByTagName( "canvas" );
+
+             for ( var i = 0; i < canvasEls.length; i += 1 )
+             {
+                   /* beautify preserve:start */
+                   canvasEls[ i ].ontouchstart = function() { return false; }
+             	   /* beautify preserve:end */
+             }
+       }
+       preventDefault_for_canvas_mouse_down();
+
+
+
+
+
+
+
+       let is_mouse_held_down_on_canvas_0 = false;
+       let is_mouse_held_down_on_canvas_1 = false;
+       let is_mouse_held_down_on_canvas_2 = false;
+
+       let posX;
+       let posY;
+
+
+       function _A()
+       {
+
+             if ( is_mouse_held_down_on_canvas_0 )
+             {
+                   let _canvas_0 = document.querySelector( "._CANVAS_0" );
+                   let _ctx_ = _canvas_0.getContext( "2d" );
+
+                   _ctx_.clearRect( 0, 0, _canvas_0.width, _canvas_0.height );
+                   _ctx_.fillStyle = "#ddd";
+                   _ctx_.fillRect( posX, posY, 150, 40 );
+             }
+             else if ( is_mouse_held_down_on_canvas_1 )
+             {
+                   let _canvas_0 = document.querySelector( "._CANVAS_1" );
+                   let _ctx_ = _canvas_0.getContext( "2d" );
+
+                   _ctx_.clearRect( 0, 0, _canvas_0.width, _canvas_0.height );
+                   _ctx_.fillStyle = "#ddd";
+                   _ctx_.fillRect( posX, posY, 150, 40 );
+             }
+             else if ( is_mouse_held_down_on_canvas_2 )
+             {
+                   let _canvas_0 = document.querySelector( "._CANVAS_2" );
+                   let _ctx_ = _canvas_0.getContext( "2d" );
+
+                   _ctx_.clearRect( 0, 0, _canvas_0.width, _canvas_0.height );
+                   _ctx_.fillStyle = "#ddd";
+                   _ctx_.fillRect( posX, posY, 150, 40 );
+             }
+
+             window.requestAnimationFrame( _A );
+       }
+
+       _A();
+
+
+
+
+
+
+
+
+
+       document.querySelector( "._CANVAS_0" ).addEventListener( "touchstart", check_touch_down_0 );
+       document.querySelector( "._CANVAS_1" ).addEventListener( "touchstart", check_touch_down_1 );
+       document.querySelector( "._CANVAS_2" ).addEventListener( "touchstart", check_touch_down_2 );
+
+       function check_touch_down_0( evt )
+       {
+
+             is_mouse_held_down_on_canvas_0 = true;
+
+             /*
+               ( clientX - _rect.left ) / _rect.width * _canvas_0.width;
+             */
+
+             let _canvas_0 = document.querySelector( "._CANVAS_0" );
+             let _rect = _canvas_0.getBoundingClientRect();
+             let _x = evt.touches[ 0 ].clientX - _rect.left;
+             let _y = evt.touches[ 0 ].clientY - _rect.top;
+
+
+             let scale = _canvas_0.width / _rect.width;
+
+             console.log(
+                   ( _x * scale ).toFixed( 2 ) +
+                   " //// " +
+                   ( _y * scale ).toFixed( 2 ) );
+
+
+
+
+
+
+             posX = ( _x * scale );
+             posY = ( _y * scale );
+
+
+       }
+
+       function check_touch_down_1( evt )
+       {
+
+             is_mouse_held_down_on_canvas_1 = true;
+
+             /*
+               ( clientX - _rect.left ) / _rect.width * _canvas_0.width;
+             */
+
+             let _canvas_0 = document.querySelector( "._CANVAS_1" );
+             let _rect = _canvas_0.getBoundingClientRect();
+             let _x = evt.touches[ 0 ].clientX - _rect.left;
+             let _y = evt.touches[ 0 ].clientY - _rect.top;
+
+
+             let scale = _canvas_0.width / _rect.width;
+
+             console.log(
+                   ( _x * scale ).toFixed( 2 ) +
+                   " //// " +
+                   ( _y * scale ).toFixed( 2 ) );
+
+
+
+
+
+
+             posX = ( _x * scale );
+             posY = ( _y * scale );
+
+
+       }
+
+       function check_touch_down_2( evt )
+       {
+
+             is_mouse_held_down_on_canvas_2 = true;
+
+             /*
+               ( clientX - _rect.left ) / _rect.width * _canvas_0.width;
+             */
+
+             let _canvas_0 = document.querySelector( "._CANVAS_1" );
+             let _rect = _canvas_0.getBoundingClientRect();
+             let _x = evt.touches[ 0 ].clientX - _rect.left;
+             let _y = evt.touches[ 0 ].clientY - _rect.top;
+
+
+             let scale = _canvas_0.width / _rect.width;
+
+             console.log(
+                   ( _x * scale ).toFixed( 2 ) +
+                   " //// " +
+                   ( _y * scale ).toFixed( 2 ) );
+
+
+
+
+
+
+             posX = ( _x * scale );
+             posY = ( _y * scale );
+
+
+       }
+
+
+
+
+
+
+       document.body.addEventListener( "touchmove", check_touch_move );
+
+       function check_touch_move( evt )
+       {
+
+             if ( is_mouse_held_down_on_canvas_0 )
+             {
+                   let _canvas_0 = document.querySelector( "._CANVAS_0" );
+                   var rect = _canvas_0.getBoundingClientRect(),
+                         scaleX = _canvas_0.width / rect.width;
+                   x0 = ( evt.touches[ 0 ].clientX - rect.left ) * scaleX;
+                   y0 = ( evt.touches[ 0 ].clientY - rect.top ) * scaleX;
+
+                   posX = x0;
+                   posY = y0;
+             }
+             else if ( is_mouse_held_down_on_canvas_1 )
+             {
+                   let _canvas_0 = document.querySelector( "._CANVAS_1" );
+                   var rect = _canvas_0.getBoundingClientRect(),
+                         scaleX = _canvas_0.width / rect.width;
+                   x0 = ( evt.touches[ 0 ].clientX - rect.left ) * scaleX;
+                   y0 = ( evt.touches[ 0 ].clientY - rect.top ) * scaleX;
+
+                   posX = x0;
+                   posY = y0;
+             }
+             else if ( is_mouse_held_down_on_canvas_2 )
+             {
+                   let _canvas_0 = document.querySelector( "._CANVAS_2" );
+                   var rect = _canvas_0.getBoundingClientRect(),
+                         scaleX = _canvas_0.width / rect.width;
+                   x0 = ( evt.touches[ 0 ].clientX - rect.left ) * scaleX;
+                   y0 = ( evt.touches[ 0 ].clientY - rect.top ) * scaleX;
+
+                   posX = x0;
+                   posY = y0;
+             }
+       }
+
+
+
+
+
+       document.body.addEventListener( "touchend", check_touch_up );
+
+       function check_touch_up( evt )
+       {
+             is_mouse_held_down_on_canvas_0 = false;
+             is_mouse_held_down_on_canvas_1 = false;
+             is_mouse_held_down_on_canvas_2 = false;
+       }
+
+       </script>
+
+</body>
+
+</html>
