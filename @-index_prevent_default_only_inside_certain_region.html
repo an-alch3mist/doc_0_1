@@ -241,8 +241,31 @@
                    if ( _y1 > y && _y1 < y + h )
                    {
 
-                         x = _x1 - w / 2;
-                         y = _y1 - h / 2;
+
+                         let _x2 = _x1 - w / 2;
+                         if ( _x2 < 0 )
+                         {
+                               _x2 = 0;
+                         }
+                         else if ( _x2 > _canvas_0.width - w )
+                         {
+                               _x2 = _canvas_0.width - w
+                         }
+
+
+
+                         let _y2 = _y1 - h / 2;
+                         if ( _y2 < 0 )
+                         {
+                               _y2 = 0;
+                         }
+                         else if ( _y2 > _canvas_0.height - h )
+                         {
+                               _y2 = _canvas_0.height - h
+                         }
+
+                         x = _x2;
+                         y = _y2;
                          draw_circle();
                          _toggle_down_0 = true;
 
